@@ -1,0 +1,305 @@
+/* global.css */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.container {
+  max-width: 1200px; /* Breite begrenzen */
+  margin: 0 auto; /* Zentrieren */
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #0056b3;
+}
+
+button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+button.secondary:hover {
+  background-color: #5a6268;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+/* Globale CSS für Bestellhistorie */
+.orders-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.order-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-details {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.order-detail-item {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.order-total {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.no-orders {
+  font-size: 18px;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Home-Seite für Handys */
+@media only screen and (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .product-list li {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .product-list img {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+/* Produktdetails für Handys */
+@media only screen and (max-width: 480px) {
+  .product-details-container {
+    padding: 10px;
+  }
+
+  .product-details-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details-container h4 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .product-details-container p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .product-details-container button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+/* Warenkorb für Handys */
+@media only screen and (max-width: 480px) {
+  .cart-container {
+    padding: 10px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .cart-item-details {
+    font-size: 14px;
+  }
+
+  .cart-item-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+/* Checkout für Handys */
+@media only screen and (max-width: 480px) {
+  .checkout-container {
+    padding: 10px;
+  }
+
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button.submit-button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+/* Bestellhistorie für Handys */
+@media only screen and (max-width: 480px) {
+  .orders-container {
+    padding: 10px;
+  }
+
+  .order-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+  }
+
+  .order-header {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .order-details {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+  }
+
+  .order-total {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+/* Footer für Handys */
+@media only screen and (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .footer div {
+    margin-bottom: 10px;
+  }
+
+  .footer h3 {
+    font-size: 16px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+}
+/* Navigation für Handys */
+@media only screen and (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  nav .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
