@@ -27,12 +27,9 @@ const Home = () => {
   useEffect(() => {
     const loadProducts = async () => {
       const data = await fetchProducts();
-      // Beispielbilder hinzufügen, falls keine vorhanden sind
       const updatedProducts = data.map((product) => ({
         ...product,
-        image:
-          product.image ||
-          `https://media.istockphoto.com/id/1305876461/vector/sorry-temporarily-out-of-stock-sign.jpg?s=612x612&w=0&k=20&c=gXtMjuh6kHPRQaOnPTroS6M7oCpC35VAfYVFQMMQmds=`,
+        image: product.image || `https://via.placeholder.com/400`,
       }));
       setProducts(updatedProducts);
       setFilteredProducts(updatedProducts);
@@ -70,10 +67,10 @@ const Home = () => {
     <div className="home-container">
       {/* Hero Section */}
       <div className="hero">
-        <h1>Willkommen bei unserem Shop</h1>
+        <h1>Willkommen bei unserem Shop </h1>
         <p>Entdecke die neuesten Angebote und Produkte!</p>
-        <Button variant="contained" color="primary" size="large">
-          Jetzt shoppen
+        <Button variant="contained" color="secondary" size="large">
+          Jetzt starten
         </Button>
       </div>
 
@@ -88,7 +85,7 @@ const Home = () => {
       <div className="filter-sort">
         <TextField
           fullWidth
-          label="Nach Name filtern"
+          label="Nach Jobtitel filtern"
           variant="outlined"
           value={filterText}
           onChange={(e) => handleFilter(e.target.value)}
@@ -100,19 +97,19 @@ const Home = () => {
           displayEmpty
         >
           <MenuItem value="">Sortieren</MenuItem>
-          <MenuItem value="price-asc">Preis: aufsteigend</MenuItem>
-          <MenuItem value="price-desc">Preis: absteigend</MenuItem>
+          <MenuItem value="price-asc">Gehalt: aufsteigend</MenuItem>
+          <MenuItem value="price-desc">Gehalt: absteigend</MenuItem>
           <MenuItem value="name-asc">Name: A-Z</MenuItem>
           <MenuItem value="name-desc">Name: Z-A</MenuItem>
         </Select>
       </div>
 
       {/* Product List */}
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className="product-list">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
-              <Card>
+              <Card className="job-card">
                 <CardMedia
                   component="img"
                   height="200"
@@ -120,7 +117,7 @@ const Home = () => {
                   alt={product.name}
                 />
                 <CardContent>
-                  <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
+                  <Link to={`/products/${product.id}`} className="job-link">
                     <Typography variant="h6" gutterBottom>
                       {product.name}
                     </Typography>
@@ -132,7 +129,7 @@ const Home = () => {
                     variant="contained"
                     color="primary"
                     onClick={() => handleAddToCart(product)}
-                    style={{ marginTop: '10px' }}
+                    className="add-to-cart-btn"
                   >
                     In den Warenkorb
                   </Button>
@@ -147,18 +144,17 @@ const Home = () => {
         )}
       </Grid>
 
-      {/* Footer Section */}
-      <footer className="footer">
-        <div>
-          <h3>Kontakt</h3>
-          <p>Email: support@shop.de</p>
-          <p>Telefon: 0123 456 789</p>
+      {/* Testimonials */}
+      <div className="carousel">
+        <h2>Was unsere Nutzer sagen</h2>
+        <div className="carousel-container">
+          <div className="carousel-item">"Beste Plattform für Technik!" - Maria</div>
+          <div className="carousel-item">
+            "Alles perfekt!" - Stefan
+          </div>
+          <div className="carousel-item">"Sehr benutzerfreundlich!" - Anna</div>
         </div>
-        <div>
-          <h3>Folge uns</h3>
-          <p>Facebook | Instagram | Twitter</p>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 };
